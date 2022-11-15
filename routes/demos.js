@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-router.get('/collaborator', function (req, res) {
-    res.sendFile('index.html', { root: 'public/demos/collaborator/client/build/' });
+router.get('/', function (req, res) {
+    res.sendFile('index.html', { root: 'public/client/build/' });
 });
 
 module.exports = router;

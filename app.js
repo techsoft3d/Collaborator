@@ -1,6 +1,8 @@
 const express = require('express');
 express.static.mime.types['wasm'] = 'application/wasm';
 
+const fs = require("fs");
+
 const path = require('path');
 const favicon = require('serve-favicon');
 const bodyParser = require('body-parser');
@@ -15,7 +17,7 @@ const options = {
   };
 
 const app = express();
-const server = require('https').createServer(app);
+const server = require('https').createServer(options, app);
 const io = require('socket.io')(server);
 
 require('./sockets/collaborator.js')(io);
@@ -38,7 +40,7 @@ app.use(express.static('public'));
 
 // app.use('/', index);
 app.use('/api', api);
-app.use('/demos', demos);
+app.use('/', demos);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {

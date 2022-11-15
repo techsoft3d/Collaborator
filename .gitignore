@@ -1,6 +1,5 @@
 /node_modules
-/public/demos/collaborator/client/node_modules
-/public/demos/collaborator/client/build
-/public/demos/collaborator/node_modules
+/public/client/node_modules
+/public/client/build
 .vscode
 /.vscode/*

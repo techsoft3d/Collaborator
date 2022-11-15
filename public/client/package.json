@@ -18,7 +18,7 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "build:prod": "env-cmd -f ../../../../.env.prod react-scripts build",
+    "build:prod": "env-cmd -f ../../.env.prod react-scripts build",
     "build:qa": "env-cmd -f ../../../../.env.qa react-scripts build",
     "build:local": "env-cmd -f ../../../../.env.local react-scripts build",
     "test": "react-scripts test --env=jsdom",
