@@ -1,0 +1,322 @@
+#app {
+  height: 100%;
+  min-height: 450px;
+  min-width: 750px;
+}
+
+#pageTabs {
+  font-size: small;
+  height: 100%;
+}
+
+#pageTabs-tab-1 {
+  margin-left: 15px;
+}
+
+/* .active>#pageTabs-tab-1 {
+  background-color: #5a5b5d;
+} */
+
+.nav>li>a {
+  color: #1f1f1f;
+  border-color: #5a5b5d;
+  border-radius: 5px 5px 0px 0px;
+  border-bottom-color: transparent;
+  background-color: #a0a1a2;
+  padding: 5px 10px 5px 10px;
+  /* font-weight:600; */
+}
+
+#codeEditor {
+    z-index: 100;
+    width: 35%;
+    top: 115px;
+    right: 10px;
+    position: absolute;
+    display: none;
+    opacity: 0.9;
+}
+
+#statusbar td {
+  padding-left: 2.5%;
+  padding-right: 1.5%;
+  width: 20%;
+}
+
+#chatLogin {
+  padding: 25px;
+  background-color: #505050;
+  color: #a0a1a2;
+}
+
+#chatLogin label {
+    margin-bottom: 10px;
+    margin-top: 10%;
+    text-align: center;
+    display: block;
+    font-weight: 500;
+}
+
+#chatLogin button {
+    margin-left: 38%;
+    margin-top: 12px;
+}
+
+.help-block {
+  color: #a0a1a2;
+  text-align: center;
+  margin-top: 60px;
+  font-size: small;
+}
+
+#modelThumbnails {
+    z-index: 15;
+    width: 275px;
+    height: 100%;
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.thumbnail {
+  width: 265;
+  height: 175px;
+	background-color:rgba(208,208,208,0.4);
+}
+
+.thumbnail img {
+  width: 100%;
+  height: 100%;
+}
+
+#viewerMenu {
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-bottom: 10px;
+  border: gray;
+  border-radius: 3px;
+  
+  border-width: 1px;
+  background-color: #5a5b5d;
+}
+
+#canvas {
+  height: calc(100% - 40px);
+  position: relative;
+  background-image: url('../img/ts3d_logo_op.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  background:linear-gradient(rbga(114, 114, 114, 0.6), yellow);
+}
+
+#logo-head {
+  padding-top:15px;
+  padding-bottom:15px;
+  border-bottom-width: 1px;
+  border-bottom-color:#8c8c8c;
+  border-bottom-style: groove;
+  background-color: black;
+}
+
+#ts3dlogo img {
+  height:35px;
+  margin-left: 15px;
+}
+
+#hclogo img{
+  right: 20px;
+  height:36px;
+  position: absolute;
+}
+
+
+body {
+  background-color: rgb(114, 114, 114);
+  color: white;
+  height: 100%;
+}
+
+html { 
+  height: 100%;
+}
+
+.nav-tabs {
+  border: transparent;
+  border-bottom-style: inset;
+  border-width: 1px;
+  background-color:black;
+  border-bottom-color:gray;
+  padding-top: 10px;
+}
+
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus {
+  text-align: center;
+  border-radius: 5px 5px 0px 0px;
+  background-color: #727272;
+  color:#c7c7c7;
+  border-color: gray;
+  border-bottom-color: transparent;
+}
+
+.btn-primary, .btn-primary.focus, .btn-primary:focus {
+  color: #c7c7c7;
+  background-color: #3c6b98;
+  border-color: gray;
+}
+
+
+#statusbar {
+  color:#8d8d8d;
+  background-color: #505050;
+  bottom: 0px;
+  padding-left: 10px;
+  width: 100%;
+  height: 5%;
+  position: fixed;
+  text-align: left;
+  border-radius: 3px;
+  font-size: 0.95vw;
+}
+
+#docs {
+  border-radius: 10px;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  border-color: transparent;
+  z-index: 1;
+}
+
+#canvas-redline textarea {
+  color: black;
+}
+
+#container {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+#ui {
+  height: calc(100% - 66px);
+}
+
+.tab-content {
+  height: calc(100% - 44px);
+}
+
+.tab-pane {
+  height: 100%;
+}
+
+#viewContainer {
+  /* height: 100% */
+}
+
+/* The Modal (background) */
+.snap-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 10001; /* Sit on top */
+    padding-top: 41px; /* Location of the box */
+    width: 100%; /* Full width */
+    height: calc(100% - 66px); /* Full height */
+    top: 66px;
+    background-color: rgba(23,23,23,0.65); /* Black w/ opacity */
+    border-radius: 10px;
+}
+
+/* Modal Content (Text) */
+.snap-modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    height: 80%;
+    margin: 3% 0% 0% 10%;
+    background-color: lightgray;
+    border-radius: 5px;
+    -webkit-animation-name: zoom;
+    -webkit-animation-duration: 0.6s;
+    animation-name: zoom;
+    animation-duration: 0.6s;
+	}
+
+/* Add Animation - Zoom in the Modal */
+.snap-modal-content img { 
+    width: 100%;
+    height: 100%;
+}
+
+@-webkit-keyframes zoom {
+    from {-webkit-transform:scale(0)} 
+    to {-webkit-transform:scale(1)}
+}
+
+@keyframes zoom {
+    from {transform:scale(0)} 
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.closeSnap {
+    position: absolute;
+    top: 5px;
+    right: 20px;
+    color: #f1f1f1;
+    font-size: 20px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.closeSnap:hover,
+.closeSnap:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+/* Context Menu */
+.contextMenu {
+  position: fixed;
+  background: rgb(59, 59, 59);
+  box-shadow: 0px 2px 10px #999999;
+  border-radius: 5px;
+  color:#b8b8b8;
+  z-index: 10000;
+}
+.contextMenu--option {
+  padding: 6px 50px 5px 10px;
+  min-width: 160px;
+  cursor: default;
+  font-size: 12px;
+}
+.contextMenu--option:hover {
+  background: linear-gradient(to top, #555, #333);
+  color: white;
+}
+        
+        /* &:active {
+            color: #e9e9e9;
+            background: linear-gradient(to top, #555, #444);
+        }
+        
+        &__disabled {
+            color: #999999;
+            pointer-events: none;
+        }
+    } */
+    
+.contextMenu--separator {
+        width: 100%;
+        height: 1px;
+        background: #CCCCCC;
+        margin: 0 0 0 0;
+} 
+

@@ -1,0 +1,43 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "bootstrap": "^4.3.1",
+    "codemirror": "^5.33.0",
+    "env-cmd": "^10.1.0",
+    "react": "^16.1.0",
+    "react-bootstrap": "^0.31.5",
+    "react-dom": "^16.13.0",
+    "react-redux": "^5.0.6",
+    "react-scripts": "^3.4.0",
+    "react-treebeard": "^2.1.0",
+    "redux": "^3.7.2",
+    "redux-promise-middleware": "^5.0.0",
+    "socket.io-client": "^2.0.4"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build:prod": "env-cmd -f ../../../../.env.prod react-scripts build",
+    "build:qa": "env-cmd -f ../../../../.env.qa react-scripts build",
+    "build:local": "env-cmd -f ../../../../.env.local react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "devDependencies": {
+    "redux-logger": "^3.0.6"
+  },
+  "homepage": "./client/build",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}
