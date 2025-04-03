@@ -1,0 +1,77 @@
+name: Docker Demo on Self-Hosted Runner
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  run-in-paris:
+    name: Run on Paris Runner
+    runs-on: [self-hosted, paris]
+    steps:
+      - name: Fix permissions before checkout
+        run: sudo chown -R $USER:$USER $GITHUB_WORKSPACE
+
+      - name: Force delete previous build artifacts
+        run: sudo rm -rf $GITHUB_WORKSPACE/* || true
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: main 
+          clean: true
+
+      - name: Write SSL certificates to files
+        run: |
+          pwd  # Print the current working directory
+          ls -la  # List files before creating certs
+          mkdir -p certs
+          echo "${{ secrets.SSL_CERT }}" > certs/server.crt
+          echo "${{ secrets.SSL_KEY }}" > certs/server.key
+          echo "${{ secrets.CA_CERT }}" > certs/ca.crt
+        
+      - name: Stop and remove old container
+        run: |
+          docker stop collaborator || true
+          docker rm collaborator || true
+  
+      - name: Build and start with Docker Compose
+        run: |
+          docker-compose down || true
+          docker-compose up -d --build
+
+  run-in-oregon:
+    name: Run on Oregon Runner
+    runs-on: [self-hosted, oregon]
+    steps:
+      - name: Fix permissions before checkout
+        run: sudo chown -R $USER:$USER $GITHUB_WORKSPACE
+
+      - name: Force delete previous build artifacts
+        run: sudo rm -rf $GITHUB_WORKSPACE/* || true
+
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          ref: main 
+          clean: true
+
+      - name: Write SSL certificates to files
+        run: |
+          pwd  # Print the current working directory
+          ls -la  # List files before creating certs
+          mkdir -p certs
+          echo "${{ secrets.SSL_CERT }}" > certs/server.crt
+          echo "${{ secrets.SSL_KEY }}" > certs/server.key
+          echo "${{ secrets.CA_CERT }}" > certs/ca.crt
+        
+      - name: Stop and remove old container
+        run: |
+          docker stop collaborator || true
+          docker rm collaborator || true
+  
+      - name: Build and start with Docker Compose
+        run: |
+          docker-compose down || true
+          docker-compose up -d --build

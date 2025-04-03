@@ -1,0 +1,15 @@
+version: '3.9'
+
+services:
+  collaborator:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: collaborator
+    restart: unless-stopped
+    ports:
+      - "443:443"
+    volumes:
+      - ./certs:/app/certs:ro       # Mount certs folder
+
+

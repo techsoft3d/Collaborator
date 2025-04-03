@@ -12,8 +12,8 @@ const demos = require('./routes/demos');
 const api = require('./routes/api');
 
 const options = {
-    key: fs.readFileSync('c:/creds/livecode.key'),
-    cert: fs.readFileSync('c:/creds/livecode.crt')
+    key: fs.readFileSync("./certs/server.key"),
+    cert: fs.readFileSync("./certs/server.crt"),
   };
 
 const app = express();
