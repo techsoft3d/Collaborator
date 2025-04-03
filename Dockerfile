@@ -12,7 +12,7 @@ RUN npm install
 COPY . .
 
 # Build the frontend app inside the container
-RUN cd public/demos/collaborator/client && \
+RUN cd public/client && \
     npm install && \
     npm run build:prod
 
