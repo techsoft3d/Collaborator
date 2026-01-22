@@ -19,7 +19,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          ref: main 
+          ref: main
           clean: true
 
       - name: Write SSL certificates to files
@@ -30,16 +30,15 @@ jobs:
           echo "${{ secrets.SSL_CERT }}" > certs/server.crt
           echo "${{ secrets.SSL_KEY }}" > certs/server.key
           echo "${{ secrets.CA_CERT }}" > certs/ca.crt
-        
+
       - name: Stop and remove old container
         run: |
           docker stop collaborator || true
           docker rm collaborator || true
-  
+
       - name: Build and start with Docker Compose
         run: |
-          docker-compose down || true
-          docker-compose up -d --build
+          docker-compose up -d --force-recreate
 
   run-in-oregon:
     name: Run on Oregon Runner
@@ -54,7 +53,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          ref: main 
+          ref: main
           clean: true
 
       - name: Write SSL certificates to files
@@ -65,13 +64,12 @@ jobs:
           echo "${{ secrets.SSL_CERT }}" > certs/server.crt
           echo "${{ secrets.SSL_KEY }}" > certs/server.key
           echo "${{ secrets.CA_CERT }}" > certs/ca.crt
-        
+
       - name: Stop and remove old container
         run: |
           docker stop collaborator || true
           docker rm collaborator || true
-  
+
       - name: Build and start with Docker Compose
         run: |
-          docker-compose down || true
-          docker-compose up -d --build
+          docker-compose up -d --force-recreate
